@@ -103,14 +103,6 @@
 			<groupId>org.openstreetmap.osmosis</groupId>
 			<artifactId>osmosis-core</artifactId>
 			<version>0.48.3</version>
-			<exclusions>
-				<!-- needed to compile in IntelliJ with Eclipse compiler -->
-				<!-- see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=536928 -->
-				<exclusion>
-					<artifactId>xml-apis</artifactId>
-					<groupId>xml-apis</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.openstreetmap.osmosis</groupId>
@@ -148,20 +140,7 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.2</version>
-			<exclusions>
-				<!-- needed to compile in IntelliJ with Eclipse compiler -->
-				<!-- see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=536928 -->
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>stax</groupId>
-					<artifactId>stax-api</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
 		<dependency>
 			<groupId>com.jcraft</groupId>
 			<artifactId>jsch</artifactId>

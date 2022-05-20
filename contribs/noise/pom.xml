@@ -43,14 +43,6 @@
 			<groupId>org.openstreetmap.osmosis</groupId>
 			<artifactId>osmosis-xml</artifactId>
 			<version>0.48.3</version>
-			<exclusions>
-				<!-- needed to compile in IntelliJ with Eclipse compiler -->
-				<!-- see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=536928 -->
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
     </dependencies>
 </project>
