@@ -12,18 +12,25 @@ import java.util.Set;
 
 public class CreateBicycleNetworkWithElevation {
 
-    private static final String outputCRS = "EPSG:25832"; //UTM-32
-    private static final String inputOsmFile = "path/to/your/input/file.osm.pbf";
-    private static final String inputTiffFile = "path/to/your/elevation/tiff-file.tif";
-    private static final String outputFile = "path/to/your/output/network.xml.gz";
+	//private static final String outputCRS = "EPSG:2154"; //UTM-32
+	//private static final String outputCRS1 = "EPSG:4258"; //UTM-32
+	//private static final String inputOsmFile = "C:\\Users\\fengg\\Desktop\\pt2matsim\\example\\ile-de-france-avantdeconfinement.osm.pbf";
+	//private static final String inputTiffFile = "D:/paris_ele/paris.tif";
+	//private static final String outputFile = "C:\\Users\\fengg\\Desktop/pt2matsim/example/paris_network.xml.gz";
 
     public static void main(String[] args) {
+
+    	String outputCRS = args[0];
+    	String inputOsmFile = args[1];
+    	String inputTiffFile = args[2];
+    	String outputFile = args[3];
 
         var elevationParser = new ElevationDataParser(inputTiffFile, outputCRS);
         var transformation = TransformationFactory.getCoordinateTransformation(TransformationFactory.WGS84, outputCRS);
 
         var network = new OsmBicycleReader.Builder()
                 .setCoordinateTransformation(transformation)
+                .setIncludeLinkAtCoordWithHierarchy((coord, hierachyLevel) -> ((hierachyLevel == 1 || hierachyLevel == 2) || (hierachyLevel == 3 || hierachyLevel == 4) || hierachyLevel == 5 || hierachyLevel == 6 || hierachyLevel == 7|| hierachyLevel == 8||  hierachyLevel == 9))
                 .setAfterLinkCreated((link, tags, direction) -> {
 
                     addElevationIfNecessary(link.getFromNode(), elevationParser);
