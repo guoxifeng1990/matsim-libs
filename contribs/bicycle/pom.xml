@@ -8,18 +8,28 @@
   <groupId>org.matsim.contrib</groupId>
   <artifactId>bicycle</artifactId>
   <name>bicycle</name>
+    <repositories>
+        <repository>
+            <id>topobyte</id>
+            <url>https://mvn.topobyte.de</url>
+        </repository>
+        <repository>
+            <id>slimjars</id>
+            <url>https://mvn.slimjars.com</url>
+        </repository>
+
+    </repositories>
   <dependencies>
       <dependency>
           <groupId>org.geotools</groupId>
           <artifactId>gt-geotiff</artifactId>
           <version>24.2</version>
       </dependency>
-      <dependency>
-          <groupId>org.matsim.contrib</groupId>
-          <artifactId>osm</artifactId>
-          <version>13.0</version>
-          <scope>compile</scope>
-      </dependency>
+        <dependency>
+            <groupId>de.topobyte</groupId>
+            <artifactId>osm4j-pbf</artifactId>
+            <version>0.2.0</version>
+        </dependency>
   </dependencies>
   <build>
   <plugins>

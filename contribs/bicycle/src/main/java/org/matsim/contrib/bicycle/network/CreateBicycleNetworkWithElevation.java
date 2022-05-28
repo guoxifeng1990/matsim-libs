@@ -3,7 +3,7 @@ package org.matsim.contrib.bicycle.network;
 import org.matsim.api.core.v01.TransportMode;
 import org.matsim.api.core.v01.network.NetworkWriter;
 import org.matsim.api.core.v01.network.Node;
-import org.matsim.contrib.osm.networkReader.OsmBicycleReader;
+import org.matsim.contrib.bicycle.network.OsmBicycleReader;
 import org.matsim.core.network.algorithms.MultimodalNetworkCleaner;
 import org.matsim.core.utils.geometry.CoordUtils;
 import org.matsim.core.utils.geometry.transformations.TransformationFactory;
@@ -41,6 +41,8 @@ public class CreateBicycleNetworkWithElevation {
 
         new MultimodalNetworkCleaner(network).run(Set.of(TransportMode.car));
         new MultimodalNetworkCleaner(network).run(Set.of(TransportMode.bike));
+	    new MultimodalNetworkCleaner(network).run(Set.of("car_passenger"));
+
 
         new NetworkWriter(network).write(outputFile);
     }
