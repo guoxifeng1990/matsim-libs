@@ -71,7 +71,7 @@ public class ElevationDataParser {
 	
 	
 	public ElevationDataParser(String tiffFile, String scenarioCRS) {
-		this.ct = TransformationFactory.getCoordinateTransformation(scenarioCRS, "EPSG:4326");
+		this.ct = TransformationFactory.getCoordinateTransformation(scenarioCRS, "EPSG:3035");
 		
 		GeoTiffReader reader = null;
 		try {
