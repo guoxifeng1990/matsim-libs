@@ -30,7 +30,7 @@ public class CreateBicycleNetworkWithElevation {
 
         var network = new OsmBicycleReader.Builder()
                 .setCoordinateTransformation(transformation)
-                .setIncludeLinkAtCoordWithHierarchy((coord, hierachyLevel) -> ((hierachyLevel == 1 || hierachyLevel == 2) || (hierachyLevel == 3 || hierachyLevel == 4) || hierachyLevel == 5 || hierachyLevel == 6 || hierachyLevel == 7|| hierachyLevel == 8))
+                .setIncludeLinkAtCoordWithHierarchy((coord, hierachyLevel) -> ((hierachyLevel == 1 || hierachyLevel == 2) || (hierachyLevel == 3 || hierachyLevel == 4) || hierachyLevel == 5 || hierachyLevel == 6 || hierachyLevel == 7|| hierachyLevel == 8 ||  hierachyLevel == 9))
                 .setAfterLinkCreated((link, tags, direction) -> {
 
                     addElevationIfNecessary(link.getFromNode(), elevationParser);
